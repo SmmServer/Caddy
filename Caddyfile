@@ -2,9 +2,12 @@ http://account.nintendo.net:80 https://account.nintendo.net:443 {
 	tls account.nintendo.net.crt account.nintendo.net.pem {
 		protocols tls1.0 tls1.2
 	}
-	proxy / http://127.0.0.1:8383
+	proxy / http://127.0.0.1:8383 {
+		transparent
+	}
 	log stdout
 	errors stdout
+	bind 127.0.0.1
 }
 #npts.app.nintendo.net
 #discovery.olv.nintendo.net
@@ -12,7 +15,10 @@ http://wup-ama.app.nintendo.net:80 https://wup-ama.app.nintendo.net:443 {
 	tls wup-ama.app.nintendo.net.crt wup-ama.app.nintendo.net.pem {
 		protocols tls1.0 tls1.2
 	}
-	proxy / http://127.0.0.1:8383
+	proxy / http://127.0.0.1:8383 {
+		transparent
+	}
 	log stdout
 	errors stdout
+	bind 127.0.0.1
 }
